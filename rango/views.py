@@ -153,7 +153,7 @@ def user_logout(request):
 
 def visitor_cookie_handler(request,response):
     visits = int(request.COOKIES.get('visits', '1'))
-    last_visit_cookie =request.COOKIES.get(('last_visit', str(datetime.now())))
+    last_visit_cookie =request.COOKIES.get('last_visit',str(datetime.now()))
     
     last_visit_time = datetime.strptime(last_visit_cookie[:-7],'%Y-%m-%d %H:%M:%S')
 
